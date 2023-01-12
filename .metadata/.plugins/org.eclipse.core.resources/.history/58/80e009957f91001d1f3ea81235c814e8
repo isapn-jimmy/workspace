@@ -1,0 +1,16 @@
+package com.lcpan.m04;
+
+public class Star_1 {
+	public static void main(String[] args) {
+
+		for (int j = 5; j >= 0; j--) {
+
+			System.out.print("*");
+			for (int i = 5; i <= j; i--) {
+				System.out.print("\n");
+
+			}
+		}
+
+	}
+}
