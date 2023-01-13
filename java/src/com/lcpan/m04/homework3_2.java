@@ -11,6 +11,8 @@ public class homework3_2 {
                 System.out.println(pricetable[j]);
                 sum[i] += table[i][j] * pricetable[j];
             }
+
+
         }
 
         for (int i = 0 ; i < sum.length;i++){
