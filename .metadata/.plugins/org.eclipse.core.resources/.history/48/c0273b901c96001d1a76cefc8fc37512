@@ -1,0 +1,31 @@
+package com.lcpan.m06_1;
+
+public class Child_1 extends Parent_1{ //有2個屬性，爸爸的field1和自己的field2
+	private int field2;
+	
+	
+	public Child_1() {
+		
+	}
+	public Child_1(int field1 , int field2) {
+		
+		this.field1 = field1;
+		this.field2 = field2;
+	}
+	
+	
+
+	public int getField2() {
+		return field2;
+	}
+
+	public void setField2(int field2) {
+		this.field2 = field2;
+	}
+	
+	public void print() {
+		
+		System.out.println(field2);
+	}
+
+}
