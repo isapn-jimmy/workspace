@@ -4,7 +4,7 @@ public class Parent_1 {
 		
 	private int field1;
 	
-	public Parent_1(){ //預設建構子
+	public Parent_1(){
 		
 	}
 	

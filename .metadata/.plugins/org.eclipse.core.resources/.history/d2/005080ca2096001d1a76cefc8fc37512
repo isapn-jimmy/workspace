@@ -7,19 +7,14 @@ public class Test_1 {
 		p.setField1(10); //弄set存值
 		p.print();
 		
-		Parent_1 p1 = new Parent_1(20); //用建構子給值
+		Parent_1 p1 = new Parent_1(20);
 		p1.print();
 		
 		
 		Child_1 c = new Child_1();
-		c.setField1(11); //2個11，因為第一個是用get的方法，另一個是用super的方法
+		c.setField1(11);
 		c.setField2(22); 
 		c.print();
-		
-		
-		
-		Child_1 c1 = new Child_1(100 , 200);
-		c1.print();
 		
 		
 		
