@@ -12,7 +12,6 @@ public class homework3_2 {
                 sum[i] += table[i][j] * pricetable[j];
             }
 
-
         }
 
         for (int i = 0 ; i < sum.length;i++){
