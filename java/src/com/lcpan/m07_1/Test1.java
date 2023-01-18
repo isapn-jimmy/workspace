@@ -1,9 +1,10 @@
-package com.lcpan.m06p;
+package com.lcpan.m07_1;
 
 public class Test1 {
 
 	public static void main(String[] args) {
-
+		Animal animal = new Animal();
+		animal.run();
 		Dog dog = new Dog();
 		dog.run();
 		animal = dog;

@@ -6,7 +6,7 @@ public class Test1 {
 
 		Dog dog = new Dog();
 		dog.run();
-		animal = dog;
+		Animal.animal = dog;
 		animal.run();
 		animal = new Cat();
 		animal.run();
