@@ -8,7 +8,7 @@ public class Parent_1 {
 		
 	}
 	
-	public Parent_1(int field1){
+	public Parent_1(int field1){//建構子有傳參數值
 		
 		this.field1 = field1;
 		
