@@ -1,4 +1,3 @@
-package com.lcpan.m05;
 
 public class ObjectArray {
 	public static void main(String[] args) {

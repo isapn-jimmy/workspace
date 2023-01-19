@@ -1,4 +1,3 @@
-package com.lcpan.m01;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -9,7 +8,7 @@ public class HelloWorld {
 		Scanner scn = new Scanner(System.in);
 	    String[]  num = {"jerry", "mary" ,  "mandy" , "jimmy"};
 	    
-	    		
+	    System.out.println("Hello World");
 	
 	
 	}
