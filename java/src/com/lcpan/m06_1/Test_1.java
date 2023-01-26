@@ -10,15 +10,12 @@ public class Test_1 {
 		Parent_1 p1 = new Parent_1(20); //用建構子給值
 		p1.print();
 		
-		
 		Child_1 c = new Child_1();
 		c.setField1(11); //2個11，因為第一個是用get的方法，另一個是用super的方法
-		c.setField2(22); 
+		c.setField2(22); //有回傳參數值
 		c.print();
 		
-		
-		
-		Child_1 c1 = new Child_1(100 , 200);
+		Child_1 c1 = new Child_1(100 , 200);//創建預設建構子方法
 		c1.print();
 		
 		

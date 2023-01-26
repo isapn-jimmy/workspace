@@ -1,4 +1,4 @@
-package com.lcpan.m06p;
+ package com.lcpan.m06p;
 
 public class Test2 {
 

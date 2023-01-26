@@ -21,7 +21,7 @@ public class Point2 {
         return ix.hashCode() ^ iy.hashCode();
     }
     
-    public String toString() {
-        return "(" + x + "," + y + ")";
+    public String toString() { 
+        return "(" + x + "," + y + ")"; //固定寫法
     }
 }

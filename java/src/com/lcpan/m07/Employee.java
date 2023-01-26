@@ -1,23 +1,23 @@
 package com.lcpan.m07;
 
 public class Employee {
-	int empno;
-	String name;
-	static int count;
+	private int empno;
+	private String name;
+	private static int count;
 
 	public Employee(int empno, String name) {
 		this.empno = empno;
 		this.name = name;
-		count++;
+		count++; // 老師今天只是要記錄有多少人才會把static值放進Employee這個一般的建構子方法
 	}
 
 	public void printData() {
-		System.out.print("Empno = " + empno);
-		System.out.println(", Name = " + name);
+		System.out.print("Empno = " + empno);//放一般的實例變數
+		System.out.println(", Name = " + name);//放一般的實例變數
 	}
 
 	public static int getCount() {
-		return count;
+		return count; //只放static的count
 	}
 	
 	public static void main(String[] args) {
