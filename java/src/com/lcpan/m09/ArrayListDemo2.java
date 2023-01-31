@@ -3,7 +3,7 @@ package com.lcpan.m09;
 import java.util.*; 
 
 public class ArrayListDemo2 {
-	@SuppressWarnings({ "rawtypes", "unchecked" })
+	//@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void main(String[] args) {
         List list = new ArrayList();
         list.add(12); 

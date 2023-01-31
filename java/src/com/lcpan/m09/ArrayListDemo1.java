@@ -5,7 +5,7 @@ import java.util.*;
 public class ArrayListDemo1 {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void main(String[] args) {
-		List list = new ArrayList();
+		List list = new ArrayList();//父親參用子類別(多型)
         list.add(12);
         list.add(6.8);
         list.add("Hello");
