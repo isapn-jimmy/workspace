@@ -12,7 +12,7 @@ public class HashMapDemo1 {
         tel2.put("sean", "0939444444");
         tel2.put("Mary", "0935555555");
         tel2.put("Jean", "0931666666");
-        tel1.putAll(tel2);
+        tel1.putAll(tel2);//將tel2的資料全部加入tel1, 新的資料蓋過舊的資料
         System.out.println(tel1.get("John"));
         System.out.println(tel1.get("Mary"));
         System.out.println(tel1.get("Jean"));
