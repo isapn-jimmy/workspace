@@ -1,9 +1,0 @@
-package com.lcpan.m07_1;
-
-public class Feline extends Animal {
-	
-	public void run() {
-		System.out.println("Feline is running");
-	}
-
-}
