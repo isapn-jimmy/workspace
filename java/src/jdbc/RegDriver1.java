@@ -6,7 +6,6 @@ public class RegDriver1 {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			System.out.println("OK");
 		}catch (ClassNotFoundException e) {
-			System.out.println("NG");
 			e.printStackTrace();
 		}
 	}
