@@ -3,9 +3,8 @@ package connectionUtil;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
 public class ConnectionFactory {
-	private String url = "jdbc:sqlserver://localhost:1433;databasename=MyTest;encrypt=false";
+	private String url = "jdbc:sqlserver://localhost:1433;databasename=Northwind;encrypt=false";
 	private String user = "banana";
 	private String pwd = "1234";
 
