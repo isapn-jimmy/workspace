@@ -20,7 +20,7 @@
     <img id="idstar3"  src="Images/star.gif" />
     <img id="idstar4"  src="Images/star.gif" />
     <img id="idstar5"  src="Images/star.gif" />
-    <p class="p1">單擊點平雙擊重置</p>
+    <p class="p1">單擊點評，雙擊重置</p>
     <p class="p2">評分</p>
     <script>
         let mouseOvercheck=true;
@@ -31,7 +31,7 @@
         document.getElementById("idstar"+i).addEventListener("mouseover",mouseOver);  //事件繫結，滑鼠滑入
         document.getElementById("idstar"+i).addEventListener("mouseout",mouseOut);    //事件繫結，滑鼠滑出
         document.getElementById("idstar"+i).addEventListener("click",oneclick);    //事件繫結，點擊
-        document.getElementById("idstar"+i).addEventListener("dclick",doubleclick);    //事件繫結，雙擊點擊
+        document.getElementById("idstar"+i).addEventListener("dblclick",reset);    //事件繫結，雙擊點擊
         }
         
         
@@ -64,12 +64,14 @@
             clickcheck=false;
          }
         }
-        function doubleclick(e){
-            let mousetarget = Number(e.currentTarget.id.charAt(6));
-            for(let i =1 ; i<= parseInt(mousetarget);i++){
+        function reset(e){
+            // let mousetarget = Number(e.currentTarget.id.charAt(6));
+            for(let i =1 ; i<= 5;i++){
                 document.getElementById("idstar"+i).src="Images/star.gif";
             }
             document.getElementsByClassName("p2")[0].innerHTML = "評分為：";
+            //document.getElementsByClassName("p2")[0].innerHTML="評分";
+            // let d=document.getElementsByClassName("p2")[0];
             mouseOutcheck=true;
             mouseOutcheck=true;
             clickcheck=true;
