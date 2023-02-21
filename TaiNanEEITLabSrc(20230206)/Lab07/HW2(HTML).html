@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <title>02checkPassword.html</title>
+</head>
+<body>
+    <div>
+    <label>姓名:</label>
+    <input type="text" id="idName" size="2"/>
+
+    <span id="idn"></span><br/>
+    <span class="Note1">(1.不可空白 2.至少兩個字以上 3.必須全部為中文字)</span><br>
+    <!-- <input type="button" id="idbut1"  value="提交" onclick="checkName();" />
+    <br /> -->
+    </div>
+    <div>
+    <label>Password:</label>
+    <input type="password" id="idPwd" size="6" /><!-- 瀏覽器執行到此標籤會建立一個物件-->
+    <span id="idsp"></span><br/>   
+    <span class="Note2">(1.不可空白 2.至少6個字以上且包含英數字及特殊字元)</span><br>
+    <!-- <input type="button" id="idbut" value="checkPassword" onclick="checkPwd();" />   -->
+    </div> 
+    <div>
+    <label>日期:</label>
+    <input type="text" id="idDate"> 
+    <span id="idd"></span><br>
+    <span class="Note3">(格式:西元年/月/日(yyyy/mm/dd))</span>
+    <!-- <input type="button" id="idbut2"  value="確定" onclick="checkDate();"/>
+    <br /> -->
+   </div>
+</body>
+</html>

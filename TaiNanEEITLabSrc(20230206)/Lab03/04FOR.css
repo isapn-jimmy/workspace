@@ -1,0 +1,13 @@
+document.write("<table><tr><td>99乘法表</td></tr></table>");
+document.write("<table border ='1'>");
+for(let i=2;i<10;i++){
+    document.write("<td>");
+    
+    for(let j=1 ; j<10;j++){
+        
+        document.write(`${i}*${j}=${i*j}<br>`)
+        
+    }
+    document.write("</td>");
+    
+} document.write("</table>");

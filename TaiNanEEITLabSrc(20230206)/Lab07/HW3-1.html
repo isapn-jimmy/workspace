@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <title>02dynamicStyleImg.html</title>
+    <style>
+        /* .s {
+            filter: grayscale(1);  /*沒有任何色彩的黑白影像*/
+            
+        
+        /* .n {
+            filter: grayscale(0);  /*顏色不變*/
+        
+    </style>
+
+</head>
+<body>
+    <img id="idstar1"  src="Images/star.gif" />
+    <img id="idstar2" src="Images/star.gif" />
+    <img id="idstar3"  src="Images/star.gif" />
+    <img id="idstar4"  src="Images/star.gif" />
+    <img id="idstar5"  src="Images/star.gif" />
+    <p class="p1">單擊點平雙擊重置</p>
+    <p class="p2">評分</p>
+    <script>
+        let mouseOvercheck=true;
+        let mouseOutcheck=true;
+        let clickcheck = true;
+        // http://blog.shihshih.com/css-filter/
+        for(let i = 1 ; i<=5 ;i++){
+        document.getElementById("idstar"+i).addEventListener("mouseover",mouseOver);  //事件繫結，滑鼠滑入
+        document.getElementById("idstar"+i).addEventListener("mouseout",mouseOut);    //事件繫結，滑鼠滑出
+        document.getElementById("idstar"+i).addEventListener("click",oneclick);    //事件繫結，點擊
+        document.getElementById("idstar"+i).addEventListener("dclick",doubleclick);    //事件繫結，雙擊點擊
+        }
+        
+        
+
+        function mouseOver(e) {//e代表event物件，作為參數來使用
+            if(mouseOvercheck){
+            let mousetarget = Number(e.currentTarget.id.charAt(6)); //idstar1有6個索引值(i、d、s、t、a、r、1)、idstar2有6個索引值~idstar5有6個索引值
+            for(let i = 1;i<=parseInt(mousetarget);i++){
+                document.getElementById("idstar"+i).src="Images/chngstar.gif";
+            }
+         }
+        }
+        function mouseOut(e) {
+            if(mouseOutcheck){
+            let mousetarget=Number(e.currentTarget.id.charAt(6));
+            for(let i =1; i<= parseInt(mousetarget);i++){
+                document.getElementById("idstar"+i).src="Images/star.gif";
+            }
+         }
+        }
+        function oneclick(e){
+            if(clickcheck){
+            let mousetarget = Number(e.currentTarget.id.charAt(6));
+            for(let i =1 ; i<= parseInt(mousetarget);i++){
+                document.getElementById("idstar"+i).src="Images/chngstar.gif";
+            }
+            document.getElementsByClassName=("p2")[0].innerHTML=`評分${mousetarget}星`;
+            mouseOutcheck=false;
+            mouseOutcheck=false;
+            clickcheck=false;
+         }
+        }
+        function doubleclick(e){
+            let mousetarget = Number(e.currentTarget.id.charAt(6));
+            for(let i =1 ; i<= parseInt(mousetarget);i++){
+                document.getElementById("idstar"+i).src="Images/star.gif";
+            }
+            document.getElementsByClassName("p2")[0].innerHTML = "評分為：";
+            mouseOutcheck=true;
+            mouseOutcheck=true;
+            clickcheck=true;
+        }
+    </script>
+</body>
+</html>

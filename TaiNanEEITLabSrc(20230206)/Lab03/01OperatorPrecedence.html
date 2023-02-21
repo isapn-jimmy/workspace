@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <title>01OperatorPrecedence.html</title>
+</head>
+<body>
+    <script>  
+        //算術運算子++
+        
+        let a =1;
+        a++;
+        console.log(`a=${a}`);
+
+
+        a=1;
+        a=a+1;
+        console.log(`a=${a}`);
+
+        a=1;
+        ++a;
+        console.log(`a=${a}`);
+
+
+        a=1;
+        let b=10*++a;  //1.先++a 2.b=10*a; 3.b=20
+        console.log(`a=${a},b=${b}`);
+
+        a=1;
+        let c=10*a++;  //1.b=10*a 2.再a++; 3.c=10;
+        console.log(`a=${a},c=${c}`);
+
+
+        //關係運算子
+        //值相等== 
+        //值及資料類型相等===
+        console.log(5=="5");//true
+        //邏輯運算子
+        console.log(2||8);//2 -> true 會先從第一個字開始看, 2是true 在||裡面有一個true即可
+        console.log(2&&8);
+        console.log(false||3);
+        console.log(true||8);
+        console.log(true&&5);
+        console.log(false&&5);
+        console.log(c||6);
+
+
+
+
+        
+        
+        //三元運算子（判斷式）?（真時回傳值）:（假時回傳值）
+        let x=5;
+        let y = x>0?x:-1; //底下的if的意思一樣
+
+        // if(x>0){
+        //     y=x;
+        // }else{
+        //     y=-1;
+        // }
+        console.log(`x=${x},y=${y}`);
+
+
+        let i="abc";
+        let j=i?1:2;
+        // if(i){
+        //     j=1;
+        // }else{
+        //     j=2;
+        // }
+         console.log(`i=${i},j=${j}`);
+
+         var z="hello world";
+         console.log(z);
+         console.log(window.z);
+        
+    </script>
+        
+</body>
+</html>

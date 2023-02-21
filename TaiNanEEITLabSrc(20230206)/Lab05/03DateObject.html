@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <title>03DateObject.html</title>
+</head>
+<body>
+    <script>
+        //建立日期物件語法 1
+        let d = new Date();
+        console.log(d);
+
+        //建立日期物件語法 2
+        d=new Date("2023-2-16");
+        console.log(d);
+        d=new Date("2023-02-16T01:52:30");//要補滿兩位數 , 沒有的話自動補0
+        console.log(d);
+        d=new Date("2023/2/16 1:52:30");//早上就是1:52
+        console.log(d);
+        d=new Date("2023/2/16 13:52:30");//下午就是13:52OR加上pm
+        console.log(d);
+        console.log("============");
+        d=new Date("2023/2/29"); //2023/3/1
+        console.log(d);
+        d=new Date("2023/2/32"); //Invalid Date
+        console.log(d);
+
+        //建立日期物件語法 3
+        d=new Date(2023,0,16);//0-11而已,所以2023,0,16代表1月16號
+        console.log(d);
+
+        d=new Date(2023,1,32);//2023/3/4
+        console.log(d);
+
+        d=new Date();
+        let theYear = d.getFullYear() - 1911;
+        let theMonth = d.getMonth() + 1;
+        let theDate = d.getDate();
+        // console.log(d);
+        console.log(`民國${theYear}年${theMonth}月${theDate}日`);
+        console.log(new Date().getDay());
+
+    </script>
+</body>
+</html>
