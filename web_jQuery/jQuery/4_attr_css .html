@@ -38,6 +38,29 @@
                     $(this).attr('placeholder','example@icloud.com')
                 }
             })
+
+            // alert($('textarea').css('font')) // 13.3333px monospace
+
+            // $('textarea').focus().blur()
+            // $('textarea').focus(function(){}).blur(function(){})
+            $('textarea').focus(function(){
+                // $(this).attr('rows',5).attr('cols',25)
+                $(this).attr({
+                    rows:  5,
+                    cols: 25,
+                }).css({
+                    fontSize: '20px',
+                    backgroundColor: 'yellow',
+                })
+            }).blur(function(){
+                $(this).attr({
+                    rows:  2,
+                    cols: 20,
+                }).css({
+                    fontSize: '13.3333px',
+                    backgroundColor: '#fff',
+                })
+            })
         })
     </script>
 </head>

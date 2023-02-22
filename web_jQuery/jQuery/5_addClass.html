@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <script src="./js/jquery-3.6.3.js"></script>
+    <style>
+        .myLabel{
+            text-transform: capitalize;
+            width: 80px;
+            float: left;
+            color: maroon;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){  
+            $('label').addClass('myLabel') //一堆class，寫在這裡，不要用.css().css()，一個css一個顏色
+
+            $(':text').focus(function(){
+                $(this).css('background-color','yellow')
+            }).blur(function(){//離開focus模式執行function
+                $(this).css('background-color','#fff')//離開之後背景變成白色=#fff
+            })
+
+            $('input[type="email"]').focus(function(){
+                $(this).attr('placeholder','') //進入focus模式,placeholder呈現空白以便使用者打字
+            }).blur(function(){
+                if($(this).val() == ''){//離開focus模式則會出現example@icloud.com提醒使用者
+                    $(this).attr('placeholder','example@icloud.com')
+                }
+            })
+
+            // alert($('textarea').css('font')) // 13.3333px monospace
+
+            // $('textarea').focus().blur()
+            // $('textarea').focus(function(){}).blur(function(){})
+            $('textarea').focus(function(){
+                // $(this).attr('rows',5).attr('cols',25)
+                $(this).attr({//attr增加屬性
+                    rows:  5,
+                    cols: 25,
+                }).css({
+                    fontSize: '20px',
+                    backgroundColor: 'yellow',
+                })
+            }).blur(function(){
+                $(this).attr({
+                    rows:  2,
+                    cols: 20,
+                }).css({
+                    fontSize: '13.3333px',
+                    backgroundColor: '#fff',
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <p>
+        <label>name: </label>
+        <input type="text">
+    </p>
+    <p>
+        <label>email: </label>
+        <input type="email" placeholder="Your email...">
+    </p>
+    <p>
+        <label>Comment: </label>
+        <textarea></textarea>
+    </p>
+</body>
+</html>

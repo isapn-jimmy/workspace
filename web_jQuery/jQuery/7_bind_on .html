@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery-3.6.3.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $('p>span').mouseenter().mouseleave() //p是爺爺>span是曾孫=p標籤底下的span標籤
+            // $('p>span').mouseenter(function(){}).mouseleave(function(){}) 
+            //物件.事件.function(){}
+            /*===
+            $('p>span').mouseenter(function(){
+                $(this).addClass('highlight') //mouse一進來,this(span標籤)要加上類別(highlight)在style.css
+            }).mouseleave(function(){ //mouse一離開,span標籤馬上離開類別(highlight)
+                $(this).removeClass('highlight')
+            })
+            ===*/
+
+            // 語法: $(物件).bind('事件',處理函數)
+            // $('p>span').bind().bind()
+            // $('p>span').bind('mouseenter',function(){}).bind('mouseleave',function(){})
+            /*===
+            $('p>span').bind('mouseenter',function(){
+                $(this).addClass('highlight')
+            }).bind('mouseleave',function(){
+                $(this).removeClass('highlight')
+            })
+            ===*/
+
+            // on 語法1: $(物件).on('事件',處理函數)
+            /*===
+            $('p>span').on('mouseenter',function(){
+                $(this).addClass('highlight')
+            }).on('mouseleave',function(){
+                $(this).removeClass('highlight')
+            })
+            ===*/
+            
+            /*===
+            $('p>span').on('mouseenter mouseleave',function(){
+                $(this).toggleClass('highlight')
+            })
+            ===*/
+
+            // on 語法2: $(document).on('事件','物件',處理函數)
+            $(document).on('mouseenter mouseleave','p>span',function(){
+                $(this).toggleClass('highlight')
+            })
+
+            // Usage: $(window).on('resize scroll',function(){})
+        })
+    </script>
+</head>
+
+<body>
+	<p><span>Lorem ipsum dolor sit amet.</span></p>
+</body>
+
+</html>

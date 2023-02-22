@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery-3.6.3.js"></script>
+    <script>
+        // JavaScript 搜尋的語法
+        // Array  ---> includes()
+        // String ---> search(new RegExp())
+
+        $(document).ready(function(){//在javascript裡面,html寫在上面,可是在jQuery可以使用document.ready,將javascript寫在上面而且執行成功
+            $('#search').keyup(function(){ //物件id=search,keyup(計算打了幾個字),執行function
+                let name = $(this).val()   //在search裡面取得我打的值
+                
+                $(`ul>li>span`).removeClass('highlight') //在ul底下找到li再找到span,移除類別highlight(在style.css)
+
+                if($(this).val() != ''){
+                    $(`ul>li>span:contains(${name})`).addClass('highlight')//我只要有打字而且打得字跟底下其中一個單字符合，則會出現黃色
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <p>
+        <label for="search">Search: </label>
+        <input type="search" id="search">
+    </p>
+    <ul>
+        <li><span>Ann Hathaway</span></li>
+        <li><span>Robert De Niro</span></li>
+        <li><span>Bruce Willis</span></li>
+        <li><span>Cybill Shepherd</span></li>
+        <li><span>Robert Readford</span></li>
+        <li><span>Maryl Streep</span></li>
+        <li><span>Bred Pitt</span></li>
+        <li><span>Robin Williams</span></li>
+        <li><span>Annete Bening</span></li>
+        <li><span>Robert Downey Jr.</span></li>
+        <li><span>Demi Moore</span></li>
+        <li><span>Angelina Jolie</span></li>
+    </ul>
+</body>
+
+</html>
