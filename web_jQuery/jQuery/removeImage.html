@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <script src="./js/jquery-3.6.3.min.js"></script>
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js -->
+</head>
+<script>
+    //$('選取內容select').處理()
+    $(document).ready(function(){
+        $('img').click(function(){
+            $(this).remove()
+        })
+       
+    })
+    
+</script>
+<body>
+    <img src="../images/small/pic1.gif" alt="笑臉">
+    <img src="../images/small/pic2.gif" alt="笑臉">
+    <img src="../images/small/pic3.gif" alt="笑臉">
+<!-- 圖片跑不出來，用alt裡的文字替代 -->
+</body>
+</html>
