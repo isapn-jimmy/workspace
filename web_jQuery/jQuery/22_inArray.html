@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<style>
+		span{
+			text-transform: capitalize;
+			color: red;
+		}
+	</style>
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="./js/jquery-3.6.3.js"></script>
+	<script>
+		// $(選取內容).處理()
+		// $.處理()   // 公用函數
+		// $.inArray(物件, 陣列)   // 物件有沒有在這個陣列裡
+		$(function () {
+			let breads = ['bagel','donuts','pretzel','croissant','roll']
+
+			$('#checkButton').click(function(){
+				let bread = $('#bread').val().toLowerCase()  //輸入我想要的麵包不小心寫到大寫自動轉成小寫
+
+				// alert($.inArray(bread, breads)) // 傳回 index 值或 -1
+
+				if($.inArray(bread, breads) != -1){
+					$('#feedback').html(`<span>${bread}</span> is in the bread array.`)
+				}else{
+					$('#feedback').html(`<span>${bread}</span> is NOT in the bread array.`)
+				}
+			})
+		})	
+	</script>
+</head>
+<body>
+	Bread: <input type="text" id="bread">
+	<button id="checkButton">Check bread</button>
+
+	<p id="feedback"></p>
+</body>
+
+</html>

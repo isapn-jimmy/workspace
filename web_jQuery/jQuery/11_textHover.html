@@ -8,15 +8,15 @@
 	<script src="./js/jquery-3.6.3.js"></script>
 	<script>
 		$(function () {
-			$('.textHover').mousemove(function(e){ //屬性被當成物件要加上function(e)，30-32的a裡面有textHover可是他是屬性，現在被當成物件就要用function (e)
+			$('.textHover').mousemove(function(e){ //屬性被當成物件要加上function(e)，30-32的a標籤裡面有textHover可是他是屬性，現在被當成物件就要用function (e)
 				// 偵測游標所指的 X 座標和 Y 座標
 				// $('#theDiv').show().text(`X: ${e.clientX} | Y: ${e.clientY}`)
 
-				let theText = $(this).attr('data-text')//this在這裡就是我的滑鼠移動到google or其他，但是我的div沒有data-text的屬性所以當我的this變成div則會給他data-text的屬性
+				let theText = $(this).attr('data-text')//this在這裡就是我的滑鼠移動到google or cafepress or BBC or圖片，但是我的div(37行)沒有data-text的屬性所以當我的this變成div則會給他data-text的屬性，並將它回傳出來
 				// console.log(theText);
 				$('#theDiv').show().text(theText).css({
-					left: e.clientX + 10,
-					top: e.clientY + 10,
+					left: e.clientX + 10,  //在jQuery裡面x座標往右邊是正的，y座標往下也是正的
+					top: e.clientY + 10, 
 				})
 			}).mouseout(function(){
 				$('#theDiv').hide()

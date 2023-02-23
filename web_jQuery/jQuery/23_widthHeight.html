@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="./js/jquery-3.6.3.js"></script>
+	<script>
+		$(function () {
+			// CSS
+			// let imgWidth = $('img').css('width')		// 300px
+			// let imgHeight = $('img').css('height')	// 225px
+
+			// HTML -- XX
+			// let imgWidth = $('img').attr('width')		
+			// let imgHeight = $('img').attr('height')	
+			
+			// jQuery
+			// let imgWidth = $('img').width()		// 300
+			// let imgHeight = $('img').height()	// 225
+
+			// $('#feedback').text(`Width: ${imgWidth} | Height: ${imgHeight}`)
+
+			// 偵測螢幕的寬和高(document的高度大於window的高度)
+			let winWidth = $(window).width()		
+			let winHeight = $(window).height()	
+
+			$('#feedback').text(`Width: ${winWidth} | Height: ${winHeight}`)
+		})	
+	</script>
+</head>
+<body>
+	<img src="../images/limes.jpg">
+	<div id="feedback"></div>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="./js/jquery-3.6.3.js"></script>
+	<script>
+		$(function () {
+			$('.Condiment').click(function(){
+				let item1 = $(this).text()
+				$('#myList').append(`<li>${item1}</li>`)
+				$('#mySelect').append(`<option>${item1}</option>`)
+				$('#myTable').attr('border',1).append(`<tr><td>${item1}</td></tr>`)           
+			})
+            $('.Deli').click(function(){
+				let item2= $(this).text()
+				$('#myList').append(`<li>${item2}</li>`)
+				$('#mySelect').append(`<option>${item2}</option>`)
+				$('#myTable').attr('border',1).append(`<tr><td>${item2}</td></tr>`)           
+			})
+            $('.Beverage').click(function(){
+				let item3= $(this).text()
+				$('#myList').append(`<li>${item3}</li>`)
+				$('#mySelect').append(`<option>${item3}</option>`)
+				$('#myTable').attr('border',1).append(`<tr><td>${item3}</td></tr>`)           
+			})
+            $('.Bread').click(function(){
+				let item4 = $(this).text()
+				$('#myList').append(`<li>${item4}</li>`)
+				$('#mySelect').append(`<option>${item4}</option>`)
+				$('#myTable').attr('border',1).append(`<tr><td>${item4}</td></tr>`)           
+			})
+           
+		})	
+	</script>
+</head>
+<body>
+	<h3>Condiment (調味料類)</h3>
+	<p>
+		<button class="Condiment">mustard</button>
+		<button class="Condiment">tabasco</button>
+		<button class="Condiment">caviar</button>
+		<button class="Condiment">barbecue sauce</button>
+		<button class="Condiment">ketchup</button>
+	</p>
+	<h3>Deli (熟食類)</h3>
+	<p>
+		<button class="Deli">roast beef</button>
+		<button class="Deli">turkey</button>
+		<button class="Deli">Sandwiche</button>
+		<button class="Deli">potato salad</button>
+		<button class="Deli">potato Diane</button>
+	</p>
+	<h3>Beverage (咖啡茶飲類)</h3>
+	<p>
+		<button class="Beverage">coffee</button>
+		<button class="Beverage">herbal tea</button>
+		<button class="Beverage">hot chocolate</button>
+		<button class="Beverage">latte</button>
+		<button class="Beverage">cafe au lait </button>
+		<button class="Beverage">Con Panna</button>
+	</p>
+	<h3>Bread(麵包類)</h3>
+	<p>
+		<button class="Bread">baguette</button>
+		<button class="Bread">scone</button>
+		<button class="Bread">cup cake</button>
+		<button class="Bread">brownie </button>
+		<button class="Bread">muffin</button>
+		<button class="Bread">pretzel</button>
+		<button class="Bread">pita</button>
+	</p>
+	<hr>
+	<h2>Your choices : </h2>
+
+	<!-- create an ordered list -->
+	<ol id="myList"></ol>
+
+	<!-- create a drop-down menu -->
+	<select id="mySelect"></select>
+
+	<!-- create a table -->
+	<table id="myTable"></table>
+
+</body>
+
+</html>

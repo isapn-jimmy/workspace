@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Select Food</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      #myTable td {
+        border: 3px solid tomato;
+      }
+    </style>
+    <script src="./js/jquery-3.6.3.js"></script>
+    <script>
+      $(function () {
+        $("#myTable").css({
+          border: "3px solid tomato",
+          borderCollapse: "collapse",
+        });
+        $("p>button").click(function () {
+          const text = $(this).text();
+          const className = $(this).attr("class");
+          const index = findIndex(className);
+          if (index === "") return;
+          $(`#myTable tr:nth-child(${index})`).append(`<td>${text}</td>`);
+        });
+
+        function findIndex(className) {
+          let index = "";
+          switch (className) {
+            case "condiment":
+              index = "1";
+              break;
+            case "deli":
+              index = "2";
+              break;
+            case "beverage":
+              index = "3";
+              break;
+            case "bread":
+              index = "4";
+              break;
+            default:
+              break;
+          }
+          return index;
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <h3>Condiment (調味料類)</h3>
+    <p>
+      <button class="condiment">mustard</button>
+      <button class="condiment">tabasco</button>
+      <button class="condiment">caviar</button>
+      <button class="condiment">barbecue sauce</button>
+      <button class="condiment">ketchup</button>
+    </p>
+    <h3>Deli (熟食類)</h3>
+    <p>
+      <button class="deli">roast beef</button>
+      <button class="deli">turkey</button>
+      <button class="deli">Sandwiche</button>
+      <button class="deli">potato salad</button>
+      <button class="deli">potato Diane</button>
+    </p>
+    <h3>Beverage (咖啡茶飲類)</h3>
+    <p>
+      <button class="beverage">coffee</button>
+      <button class="beverage">herbal tea</button>
+      <button class="beverage">hot chocolate</button>
+      <button class="beverage">latte</button>
+      <button class="beverage">cafe au lait</button>
+      <button class="beverage">Con Panna</button>
+    </p>
+    <h3>Bread(麵包類)</h3>
+    <p>
+      <button class="bread">baguette</button>
+      <button class="bread">scone</button>
+      <button class="bread">cup cake</button>
+      <button class="bread">brownie</button>
+      <button class="bread">muffin</button>
+      <button class="bread">pretzel</button>
+      <button class="bread">pita</button>
+    </p>
+    <hr />
+    <h2>Your choices :</h2>
+    <!-- create a table -->
+    <table id="myTable">
+      <tr>
+        <td>Beverage</td>
+      </tr>
+      <tr>
+        <td>Deli</td>
+      </tr>
+      <tr>
+        <td>Condiment</td>
+      </tr>
+      <tr>
+        <td>Bread</td>
+      </tr>
+    </table>
+  </body>
+</html>
