@@ -11,14 +11,48 @@
         // Array  ---> includes()
         // String ---> search(new RegExp())
 
-        $(document).ready(function(){//在javascript裡面,html寫在上面,可是在jQuery可以使用document.ready,將javascript寫在上面而且執行成功
-            $('#search').keyup(function(){ //物件id=search,keyup(計算打了幾個字),執行function
-                let name = $(this).val()   //在search裡面取得我打的值
+        // $(document).ready(function(){//在javascript裡面,html寫在上面,可是在jQuery可以使用document.ready,將javascript寫在上面而且執行成功
+        //     $('#search').keyup(function(){ //物件id=search,keyup(計算打了幾個字),執行function
+        //         let name = $(this).val()   //在search裡面取得我打的值
                 
-                $(`ul>li>span`).removeClass('highlight') //在ul底下找到li再找到span,移除類別highlight(在style.css)
+        //         $(`ul>li>span`).removeClass('highlight') //在ul底下找到li再找到span,移除類別highlight(在style.css)
+
+        //         if($(this).val() != ''){
+        //             $(`ul>li>span:contains(${name})`).addClass('highlight')//我只要有打字而且打得字跟底下其中一個單字符合，則會出現黃色
+        //         }
+        //     })
+        // })
+        $(document).ready(function(){
+            // 1
+            // $('#search').keyup(function(){
+            //     let name = $(this).val()
+                
+            //     $(`ul>li>span`).removeClass('highlight')
+
+            //     if($(this).val() != ''){
+            //         $(`ul>li>span:contains(${name})`).addClass('highlight')
+            //     }
+            // })
+
+            // 2
+            // $('#search').on('input',function(){
+            //     let name = $(this).val()
+                
+            //     $(`ul>li>span`).removeClass('highlight')
+
+            //     if($(this).val() != ''){
+            //         $(`ul>li>span:contains(${name})`).addClass('highlight')
+            //     }
+            // })
+
+            // 3
+            $('#search').on('keyup search',function(){
+                let name = $(this).val()
+                
+                $(`ul>li>span`).removeClass('highlight')
 
                 if($(this).val() != ''){
-                    $(`ul>li>span:contains(${name})`).addClass('highlight')//我只要有打字而且打得字跟底下其中一個單字符合，則會出現黃色
+                    $(`ul>li>span:contains(${name})`).addClass('highlight')
                 }
             })
         })

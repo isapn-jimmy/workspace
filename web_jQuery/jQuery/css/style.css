@@ -1,5 +1,35 @@
-/*使用到這個css檔案的 6_removeClass.html , 7_bind_on */
+/*使用到這個css的.highlight有 6_removeClass.html , 7_bind_on */
 
 .highlight{
     background-color: yellow;
+}
+
+/* 11_textHover.html */
+.texrHover{
+    cursor: pointer;
+}
+#theDiv{
+    border: 1px solid #aaa;
+    color: #666;
+    padding: 5px;
+    background-color: #cba;
+    
+    position: absolute;
+    display: none;
+
+}
+
+/* 12_topMessage.html */
+#topMessage{
+    background-color: #666;
+    font: 20px Tahoma;
+    color: #eee;
+    padding: 15px;
+    text-align: center;
+
+    display: none;
+}
+#topMessage:hover{
+    cursor: pointer;
+    background-color: darkgoldenrod;
 }
