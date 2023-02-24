@@ -1,0 +1,54 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+#sliderBoard{  /* div */
+    border: 5px dashed#cccc;
+    /* div的寬要跟li一樣寬 */
+    width: 300px;
+    margin: 100px;
+    overflow: hidden;  
+    /* 數字超過了或多出來的將他們藏起來 */
+   
+
+}
+#sliderBoard ul{  /* ul */
+    width: 1500px; 
+    /* 包含所有的li */
+    position: relative; 
+    /* 定位屬性才能操作 */
+    animation: slider 5s 3;  
+    /* 呼叫slider 5秒內做3次 */
+}
+
+#sliderBoard li { /* li */
+    width: 300px;
+    height: 400px;
+
+
+    font: bold 200px Tahoma; 
+    /* Tahoma字體 */
+    text-align: center;
+    line-height: 400px;
+
+    float: left ; 
+    /* 網頁在上面 */
+}
+
+#sliderBoard li:nth-child(1){background-color: red;}/* 選擇第幾個小孩 */
+#sliderBoard li:nth-child(2){background-color: orange;}
+#sliderBoard li:nth-child(3){background-color: yellow;}
+#sliderBoard li:nth-child(4){background-color: green;}
+#sliderBoard li:nth-child(5){background-color: blue;}
+
+@keyframes slider{ /* keyframes 可以控制動畫序列的中間步驟。 */
+    /* 每次往左邊推 */
+    0%{left:     0px;}
+    20%{left: -300px;}
+    50%{left: -600px;}
+    70%{left: -900px;}
+    90%{left:  -1200px;}
+
+
+}

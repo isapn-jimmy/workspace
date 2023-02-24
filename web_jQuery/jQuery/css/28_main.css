@@ -1,0 +1,53 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+    /*     * . # 都是selector        */
+}
+.image{
+    width: 100%;
+    height: 500px;
+}
+#sliderBoard{       /* div */
+    border: 1px solid #ccc;
+    width: 60%;
+    /* div的寬度是li的寬度 */
+    height: 550px;
+    margin: 100px auto;
+    /* 左右置中 */
+
+
+
+    overflow: hidden;
+}
+#content{           /* ul */
+    position: relative;
+}
+#content li{        /* li */
+    float: left;
+}
+
+/* circle button */
+#contentButton{
+text-align: center ;/* 維持置中位置 */
+height: 50px;
+width: 100%;
+
+}
+
+#contentButton li{  /* 製作圓點類型 */
+   /* 圓的寬度跟高度相同  */
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #ccc;
+        margin: 5px;
+        /* 讓原點與圓點之間的距離更大 */
+        display: inline-block;
+        /* 原先inline跟block 算是一個容器，讓其改變 */
+
+}
+#contentButton li.clicked{
+    background-color: #666;
+
+}

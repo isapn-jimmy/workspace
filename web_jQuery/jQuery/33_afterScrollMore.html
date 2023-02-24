@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<style>
+        body{
+            background: url(../images/bg100.png);
+        }
+        #skin{
+            height: 2000px;  
+            /* 設定可以捲動的高度設2000 */
+        }
+        p{
+            width: 100%;
+            position: fixed;  /* 位置固定 */
+           top: 160px;
+           text-align: center;
+           font: 25px Tahoma;
+        }
+        .toBottom{
+            font-weight: 900;
+            color: red;
+        }
+    </style>
+	<script src="./js/jquery-3.6.3.js"></script>
+	<script>
+        $(function () {
+            $(window).scroll(function(){
+                let scroll_top=$(window).scrollTop() //按F12檢查滑到最底端是1079
+                   $('p>span').text(scroll_top) //網頁上的scroll_top也會跑出1079
+                let document_height = $(document).height() //2016 ，document高度 > window的高度  //沒有寫margin可能會超出2000
+                let window_height = $(window).height() //937
+                //console.log(window_height); 
+                if(scroll_top == document_height - window_height){
+                    $('p').addClass('toBottom') //超出1079出現紅色
+                }else{
+                    $('p').removeClass('toBottom') //沒有超出1079則不會是紅色
+                }
+            })
+		})	
+	</script>
+</head>
+
+<body>
+    <div id="skin">
+        <p>scrollTop: <span>0</span> px</p>
+    </div>
+</body>
+
+</html>

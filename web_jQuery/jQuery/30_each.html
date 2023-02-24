@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="./js/jquery-3.6.3.js"></script>
+	<script>
+        $(function () {
+            // $(陣列).each(function(){})  // $(陣列).each(function(index,index的value){})
+            // $.each(陣列,function(){})
+    
+            // $(物件).each(function(){})  // $(物件).each(function(key,value){})
+            // $.each(物件,function(){})
+            $('#theButton').click(function(){
+                //1.let theTexr ='' //不給空字串會變成undefined,變成console變成theText = theText+1
+                //$(':text').each(function(){ //:type， ex: input[type = "text"]，我輸入的字
+                //theText +=$(this).val()+' ' // 第一個this是p底下的第一格，再來是第二格。空字串讓打出來自不要黏在一起
+                
+                //2.判斷是
+                let theText =''
+                let failed = false //假設每一個都有輸入，如果是true的話代表我沒有輸入所以failed = true
+
+                $(':text').each(function(){
+                    if($(this).val() == ''){
+                        failed = true;
+                    }
+                
+            })
+            if(failed == true){
+                alerrt(`failed out all fields`)
+            }else{
+                alert(`thx for filling `)
+
+                $(':text').each(function(){
+                    theText += $(this).val() + '  ' //打出來的字就不會黏住在一起
+
+                })
+
+                $('#feedback').text(theText)
+            }
+
+
+			
+           
+            })
+		})	
+	</script>
+</head>
+
+<body>
+	<p>
+        <input type="text">
+        <input type="text">
+        <button id="theButton">Combine</button>
+    </p>
+    <div id="feedback"></div>
+</body>
+
+</html>
