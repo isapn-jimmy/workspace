@@ -6,82 +6,105 @@
 	<link rel="stylesheet" href="./css/style.css">
 	<script src="./js/jquery-3.6.3.js"></script>
 	<script>
-		$(function () {
-			$('.Condiment').click(function(){
-				let item1 = $(this).text()
-				$('#myList').append(`<li>${item1}</li>`)
-				$('#mySelect').append(`<option>${item1}</option>`)
-				$('#myTable').attr('border',1).append(`<tr><td>${item1}</td></tr>`)           
-			})
-            $('.Deli').click(function(){
-				let item2= $(this).text()
-				$('#myList').append(`<li>${item2}</li>`)
-				$('#mySelect').append(`<option>${item2}</option>`)
-				$('#myTable').attr('border',1).append(`<tr><td>${item2}</td></tr>`)           
-			})
-            $('.Beverage').click(function(){
-				let item3= $(this).text()
-				$('#myList').append(`<li>${item3}</li>`)
-				$('#mySelect').append(`<option>${item3}</option>`)
-				$('#myTable').attr('border',1).append(`<tr><td>${item3}</td></tr>`)           
-			})
-            $('.Bread').click(function(){
-				let item4 = $(this).text()
-				$('#myList').append(`<li>${item4}</li>`)
-				$('#mySelect').append(`<option>${item4}</option>`)
-				$('#myTable').attr('border',1).append(`<tr><td>${item4}</td></tr>`)           
-			})
-           
-		})	
+		 $(function () {
+		// 	$('.food').click(function(){
+		// 		let item = $(this).text()
+		// 		$('#myList').append(`<li>${item}</li>`)
+		// 		$('#mySelect').append(`<option>${item}</option>`)
+		// 		$('#myTable').attr('border',1).append(`<tr><td>${item}</td></tr>`)
+		// 	})
+
+		let c = ['mustard','tabasco','caviar','barbecue sauce','ketchup'];
+		let d = ['roast beef','turkey','Sandwiche','potato salad','potato Diane']
+		let beverage = ['coffee','herbal tea','hot chocolate','latte','cafe au lait','Con Panna']
+		let bread = ['baguette','scone','cup cake','brownie','muffin','pretzel','pita']
+			//把選的字框起來按tab可往右邊縮排 shift+tab往左縮排回來
+		$('.CONDIMENT,.DELI,.BEVERAGE,.BREAD').click(function(){
+			let item = $(this).text() 
+			$('#myList').append(`<li>${item}</li>`)
+			if($.inArray(item,c) != -1){
+				$('#myTable tr:nth-child(1)'+'  ').append('  '+`<td>${item}</td>`)
+			}else if($.inArray(item,d)!= -1){
+				$('#myTable tr:nth-child(2)'+'  ').append('  '+`<td>${item}</td>`)
+			}else if($.inArray(item,beverage)!= -1){
+				$('#myTable tr:nth-child(3)'+'  ').append('  '+`<td>${item}</td>`)
+			}else if($.inArray(item,bread)!= -1){
+				$('#myTable tr:nth-child(4)'+'  ').append('  '+`<td>${item}</td>`)
+			}	
+		
+		})
+			
+		
+
+		 })	
+
+		
 	</script>
 </head>
 <body>
 	<h3>Condiment (調味料類)</h3>
 	<p>
-		<button class="Condiment">mustard</button>
-		<button class="Condiment">tabasco</button>
-		<button class="Condiment">caviar</button>
-		<button class="Condiment">barbecue sauce</button>
-		<button class="Condiment">ketchup</button>
+		<button class="CONDIMENT">mustard</button>
+		<button class="CONDIMENT">tabasco</button>
+		<button class="CONDIMENT">caviar</button>
+		<button class="CONDIMENT">barbecue sauce</button>
+		<button class="CONDIMENT">ketchup</button>
 	</p>
 	<h3>Deli (熟食類)</h3>
 	<p>
-		<button class="Deli">roast beef</button>
-		<button class="Deli">turkey</button>
-		<button class="Deli">Sandwiche</button>
-		<button class="Deli">potato salad</button>
-		<button class="Deli">potato Diane</button>
+		<button class="DELI">roast beef</button>
+		<button class="DELI">turkey</button>
+		<button class="DELI">Sandwiche</button>
+		<button class="DELI">potato salad</button>
+		<button class="DELI">potato Diane</button>
 	</p>
 	<h3>Beverage (咖啡茶飲類)</h3>
 	<p>
-		<button class="Beverage">coffee</button>
-		<button class="Beverage">herbal tea</button>
-		<button class="Beverage">hot chocolate</button>
-		<button class="Beverage">latte</button>
-		<button class="Beverage">cafe au lait </button>
-		<button class="Beverage">Con Panna</button>
+		<button class="BEVERAGE">coffee</button>
+		<button class="BEVERAGE">herbal tea</button>
+		<button class="BEVERAGE">hot chocolate</button>
+		<button class="BEVERAGE">latte</button>
+		<button class="BEVERAGE">cafe au lait</button>
+		<button class="BEVERAGE">Con Panna</button>
 	</p>
 	<h3>Bread(麵包類)</h3>
 	<p>
-		<button class="Bread">baguette</button>
-		<button class="Bread">scone</button>
-		<button class="Bread">cup cake</button>
-		<button class="Bread">brownie </button>
-		<button class="Bread">muffin</button>
-		<button class="Bread">pretzel</button>
-		<button class="Bread">pita</button>
+		<button class="BREAD">baguette</button>
+		<button class="BREAD">scone</button>
+		<button class="BREAD">cup cake</button>
+		<button class="BREAD">brownie</button>
+		<button class="BREAD">muffin</button>
+		<button class="BREAD">pretzel</button>
+		<button class="BREAD">pita</button>
 	</p>
 	<hr>
-	<h2>Your choices : </h2>
+	<!-- <h2>Your choices : </h2> -->
 
 	<!-- create an ordered list -->
-	<ol id="myList"></ol>
+	<!-- <ol id="myList"></ol> -->
 
 	<!-- create a drop-down menu -->
-	<select id="mySelect"></select>
+	<!-- <select id="mySelect"></select> -->
 
 	<!-- create a table -->
-	<table id="myTable"></table>
+	<table id="myTable">
+		<tr >
+			<td>Condiment</td>
+		</tr>
+		<tr>
+			<td>Deli</td>
+		</tr>
+		<tr>
+			<td>Beverage</td>
+		</tr>
+		<tr>
+			<td>Bread</td>
+		</tr>
+
+
+
+	</table>
+
 
 </body>
 
