@@ -43,6 +43,11 @@ function moveToNext(){
 
 
  }
+
+ $('#content').resize(function{
+    
+
+ })
 }
     
 
