@@ -44,10 +44,22 @@ function moveToNext(){
 
  }
 
- $('#content').resize(function{
-    
+ $(window).resize(function(){
+        // ('img').each(function(){
+        //     var maxWidth = $(this).parent().width();
+        //     $(this).css('maxWidth',maxWidth);
+        //     $(this).css('height','auto');
+        //     $(this).css('object-fit','contain');
+        // })
+        divWidth = $(`#sliderBoard`).width();
+        $('#content li').width(divWidth);
+        $('ul').width=imgCount*divWidth;
+        $('ul').css({
+            left: divWidth*index-1
+        })
 
  })
+
 }
     
 
