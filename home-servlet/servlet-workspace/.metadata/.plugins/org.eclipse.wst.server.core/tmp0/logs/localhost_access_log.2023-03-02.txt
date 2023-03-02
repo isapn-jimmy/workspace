@@ -6,3 +6,10 @@
 0:0:0:0:0:0:0:1 - - [02/Mar/2023:14:11:24 +0800] "GET /Servlet/BasicServlet HTTP/1.1" 200 19
 127.0.0.1 - - [02/Mar/2023:14:16:09 +0800] "GET / HTTP/1.1" 404 751
 0:0:0:0:0:0:0:1 - - [02/Mar/2023:14:16:10 +0800] "GET /Servlet/BasicServlet HTTP/1.1" 200 19
+0:0:0:0:0:0:0:1 - - [02/Mar/2023:14:49:00 +0800] "GET /Servlet/BasicServlet HTTP/1.1" 200 19
+127.0.0.1 - - [02/Mar/2023:16:12:21 +0800] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [02/Mar/2023:16:12:22 +0800] "GET /Servlet/GetParam.html HTTP/1.1" 200 282
+0:0:0:0:0:0:0:1 - - [02/Mar/2023:16:12:28 +0800] "GET /Servlet/GetParam?username=pan HTTP/1.1" 200 51
+127.0.0.1 - - [02/Mar/2023:16:12:55 +0800] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [02/Mar/2023:16:12:56 +0800] "GET /Servlet/GetParam.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [02/Mar/2023:16:13:05 +0800] "GET /Servlet/GetParam?username=%E8%8E%8A%E5%B8%A5%E5%93%A5 HTTP/1.1" 200 58
