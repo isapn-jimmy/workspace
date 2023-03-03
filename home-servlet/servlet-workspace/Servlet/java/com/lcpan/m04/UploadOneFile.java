@@ -11,11 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
 @WebServlet("/UploadOneFile")
+@MultipartConfig(location="C:/upload/")
 public class UploadOneFile extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		Part part = request.getPart("photo");
+		String filename = part.getSubmittedFileName();
+	//	String filename = getFileName(part);
+		part.write(filename);
 	}
 	
 	private String getFileName(Part part) {
