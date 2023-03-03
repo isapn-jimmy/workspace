@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
 @WebServlet("/UploadFiles")
-@MultipartConfig(location="C:/upload/")
+@MultipartConfig(location="C:/upload/")//必寫
 public class UploadFiles extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
