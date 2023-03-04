@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Upload files</title>
+</head>
+<body>
+	<form method="post" action="../UploadFiles" enctype="multipart/form-data">
+        <input type="button" value="新增" id="plus">
+        <div id="AllSubmits">
+            <div id="files">
+                File 1: <input type="file" name="file1" /><br>
+                File 2: <input type="file" name="file2" /><br>
+                File 3: <input type="file" name="file3" /><br>
+            </div>
+            <input type="submit" value="上傳" />
+        </div>
+		
+	</form>
+
+    <script>
+        document.getElementById("plus").onclick=f;
+        function f(){
+
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Upload files</title>
+</head>
+<body>
+	<form method="post" action="../UploadFiles" 
+	enctype="multipart/form-data">
+		File 1: <input type="file" name="file1" /><br>
+		File 2: <input type="file" name="file2" /><br>
+		File 3: <input type="file" name="file3" /><br>
+		<input type="submit" value="上傳" />
+	</form>
+</body>
+</html>

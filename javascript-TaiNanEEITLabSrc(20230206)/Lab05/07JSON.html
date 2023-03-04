@@ -68,18 +68,18 @@
         //     console.log(prop);
         //     console.log(data[prop])
         // }       
-        // var data = {"emps":[
-        //               {"name":"Tom","workYears":3,"salary":45000},
-        //               {"name":"Jack","workYears":5,"salary":55000},
-        //               {"name":"Mary","workYears":7,"salary":65000}
-        //                 ]};
+        var data = {"emps":[
+                      {"name":"Tom","workYears":3,"salary":45000},
+                      {"name":"Jack","workYears":5,"salary":55000},
+                      {"name":"Mary","workYears":7,"salary":65000}
+                        ]};
         
        
         let name,wy,salary;
         // let str="<ul>";  //ES5
         let str=`<ul>`;  //ES6
-        for(let value of data.emps){
-            console.log(value);
+        for(let value of data.emps){//value是emps的意思
+            console.log(value);// Tom先被呼叫然後一路執行到89行，再到Jack一路執行到第89行..
             console.log(value.name);
             name=value.name;
             wy=value.workYears;

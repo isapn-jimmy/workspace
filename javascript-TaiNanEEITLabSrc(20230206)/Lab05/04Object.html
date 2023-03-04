@@ -8,17 +8,20 @@
     <div id="myDiv"></div>
     <script>
         function f(){
-            return `${this.brand}-${this["max speed"]}`;
+            return `${this.brand}-${this["max speed"]}`; //這裡的this，就是指cars這個物件
+            //也可以寫成 return `${this["brand"]}-${this["max speed"]}`;
+            //["max speed"] 用中括號訪問物件屬性(也可以叫做物件的成員名稱)的語法。
+            //它表示要訪問名為 "max speed" 的屬性。如果物件中包含名為 "max speed" 的屬性，則這個表達式會返回該屬性的值。如果物件中沒有名為 "max speed" 的屬性，則這個表達式會返回 undefined。
         }
         let cars = {
             brand:"tesla",
-            "max speed" :250,
+            "max speed" :250,//因為speed在javascript理事特殊的字。所以要用""來做出區別
             color:"white",
             dispf:f
         }
     console.log(cars);
     console.log(cars.brand+","+cars["max speed"]);//ES5
-    console.log(`${cars.color},${cars["max speed"]}`);//ES6
+    console.log(`${cars.color},${cars["max speed"]}`);//ES6，物件(cars).屬性(color)和物件(cars)訪問物件的屬性"maxspeed"
     console.log(cars.dispf());
     //for..in
     // for(let prop in cars){
