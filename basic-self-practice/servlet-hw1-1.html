@@ -15,7 +15,7 @@
         </div>
 
         <input type="button" value="新增檔案" id="addFileBtn" />
-        <input type="submit" value="上傳檔案" id="submitBtn" disabled/>
+        <input type="submit" value="上傳檔案" id="submitBtn"  disabled />
     </form>
 
     <script>
@@ -26,7 +26,7 @@
 
         // 新增檔案欄位
         function f() {
-            let newFileInput = document.createElement("input"); //在DOM中，創建新的HTML標籤，叫做input，(如果要創建標籤div，就用document.createElement("div"))。但是此時的input還沒有被加入到DOM裡面，所以要用appendChild加入，39行。
+            let newFileInput = document.createElement("input"); //在DOM中，創建新的HTML標籤，叫做input，讓「新增檔案的按鈕」可以創建「新的檔案」。(如果要創建標籤div，就用document.createElement("div"))。但是此時的input還沒有被加入到DOM裡面，所以要用appendChild加入，39行。
 
             newFileInput.type ="file"; //在這個新的input標籤(newFileInput)設定他的newFileInput.屬性="屬性值"
             newFileInput.name = "file" + (++fileCount);
@@ -42,3 +42,5 @@
     </script>
 </body>
 </html>
+
+
