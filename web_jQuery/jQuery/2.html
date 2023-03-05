@@ -8,7 +8,7 @@
 </head>
 <script>
     //$('選取內容select').處理()
-    $(document).ready(function(){
+    $(document).ready(function(){ //可以讓script裡的img偵測到body裡的img，沒寫會出現error，會偵測不到img
         $('img').click(function(){
             $(this).remove()
         })
@@ -17,7 +17,8 @@
     
 </script>
 <body>
-    <img src="../images/small/pic1.gif" alt="笑臉">
+    <img src="../images/small/pic1.gif" alt="笑臉"> 
+    <!-- alt就是圖片沒有顯示出來就用文字顯示 -->
     <img src="../images/small/pic2.gif" alt="笑臉">
     <img src="../images/small/pic3.gif" alt="笑臉">
 <!-- 圖片跑不出來，用alt裡的文字替代 -->

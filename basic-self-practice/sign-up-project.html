@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <title>活動報名</title>
     <style>
-        
+        body {
+      display: flex; /* 自動調整寬度 */
+      flex-direction: column; /* 從上到下的順序依次排列、或是垂直排列。預設是左到右 */
+
+      align-items: center;
+    }
     </style>
   </head>
   <body>
+    
     <h1>活動詳情</h1>
     <p>活動時間：2023年3月10日 14:00-16:00</p>
     <p>活動地點：XX商場五樓展示廳</p>
@@ -23,11 +29,12 @@
       <input type="text" id="phone" name="phone"><br><br>
       <label for="address">地址：</label>
       <input type="text" id="address" name="address"><br><br>
-      <label for="purchased">是否在本站購買過相關產品：</label>
+      <input type="button" id="but1" value="送出"><br><br>
+      <!-- <label for="purchased">是否在本站購買過相關產品：</label>
       <input type="radio" id="yes" name="purchased" value="yes">
       <label for="yes">是</label>
       <input type="radio" id="no" name="purchased" value="no">
-      <label for="no">否</label><br>
+      <label for="no">否</label><br> -->
     </form>
   </body>
 </html>      
