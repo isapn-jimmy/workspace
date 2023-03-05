@@ -1,0 +1,5 @@
+body {
+    display: flex; /* 自動調整寬度 */
+    flex-direction: column; /* 從上到下的順序依次排列、或是垂直排列。預設是左到右 */
+    align-items: center;
+  }

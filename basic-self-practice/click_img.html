@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML 標記 -->
+<div class="product" >
+    <h3>活動名稱</h3>
+    <img src="activity1.png" alt="活動圖片" id="activity1">
+    <p>活動細項</p>
+  </div>
+  
+  <!-- JavaScript 代碼 -->
+  <script>
+    document.getElementById("activity1").onclick=f;
+    function f() {
+      // 用 switch statement 根據商品 ID 顯示對應的詳細規格
+        let activity = this.id; //this可用event.target代替會比較好，因為this可能會出現一些問題
+      switch (activity) {
+        case 'activity1': 
+        //使用者要點擊activity1的圖片的時候，會到case 'activity1'裡的內容，因為getElementById("activity1")
+          alert("進入activity1");
+          window.location.href = "https://www.google.com/";
+          break;
+        case 'activity2':
+          alert('商品規格：尺寸 - 小，顏色 - 藍色，價格 - 50 元');
+          break;
+        case 'activity3':
+          alert('商品規格：尺寸 - 中，顏色 - 綠色，價格 - 75 元');
+          break;
+        // 如果點擊的商品 ID 沒有對應的詳細規格，則顯示錯誤訊息
+        default:
+          alert('找不到該商品的詳細規格。');
+          break;
+      }
+    }
+  </script>
+  
+</body>
+</html>
