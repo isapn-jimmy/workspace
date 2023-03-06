@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,3 +15,49 @@
 	</form>
 </body>
 </html>
+<!--  servlet hw1
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Upload files</title>
+</head>
+<body>
+    <form method="post" action="../UploadFiles" enctype="multipart/form-data">
+        <div id="files">
+            
+            File 1: <input type="file" name="file1" /><br>
+            File 2: <input type="file" name="file2" /><br>
+            File 3: <input type="file" name="file3" /><br>
+            <input type="file" name="file1" /><br>
+        </div>
+
+        <input type="button" value="新增檔案" id="addFileBtn" />
+        <input type="submit" value="上傳檔案" id="submitBtn"  disabled />
+    </form>
+
+    <script>
+        let filesDiv = document.getElementById("files");
+        document.getElementById("addFileBtn").onclick=f;
+        let submitBtn = document.getElementById("submitBtn");
+        let fileCount = 1;
+
+        // 新增檔案欄位
+        function f() {
+            let newFileInput = document.createElement("input"); //在DOM中，創建新的HTML標籤，叫做input，讓「新增檔案的按鈕」可以創建「新的檔案」。(如果要創建標籤div，就用document.createElement("div"))。但是此時的input還沒有被加入到DOM裡面，所以要用appendChild加入，39行。
+
+            newFileInput.type ="file"; //在這個新的input標籤(newFileInput)設定他的newFileInput.屬性="屬性值"
+            newFileInput.name = "file" + (++fileCount);
+            //設定他的屬性(name) = "file" (字串) + (++fileCount) (自增的fileCount)
+            //結果 file1 、file2、file3...
+            newFileInput.onchange = function() {
+            //onchange->當使用者「選擇檔案」被叫出
+                submitBtn.disabled = false; // 一開始先disabled是因為使用者都沒有「選擇檔案」就可以送出表單，不符合邏輯。所以一開始要先diasbled「上傳檔案」的按鈕
+            };
+            filesDiv.appendChild(newFileInput)//此時的input標籤(newFileInput)還沒有被加入到DOM裡面，所以要用appendChild加入
+           
+        };
+    </script>
+</body>
+</html>
+-->
