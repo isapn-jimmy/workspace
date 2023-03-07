@@ -8,7 +8,8 @@
 </head>
 <body>
 <h2>Session資訊</h2>
-    <%request.setCharacterEncoding("UTF-8");//對照Servlet，m07，seesionifo.java。我輸入的時候有亂碼轉成中文
+	<!-- 對照Servlet，m07，seesionifo.java。 -->
+    <%request.setCharacterEncoding("UTF-8");//我輸入的時候有亂碼轉成中文，所以要寫解碼
     String attName = request.getParameter("attrName");//有些東西不用寫像是sessoin、out因為預設有了所以不用寫
     if (attName != null && attName.length() > 0) {
 		String attValue = request.getParameter("attrValue");
