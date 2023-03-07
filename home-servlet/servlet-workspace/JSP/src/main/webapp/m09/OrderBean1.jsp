@@ -13,6 +13,7 @@
 <jsp:setProperty name="order" property="bookno" />
 <jsp:setProperty name="order" property="price" />
 <jsp:setProperty name="order" property="quantity" />
+<!-- property跟attribute不一樣。 -->
 <table border ="1">
 	<tr><th>book no.<th>unit price<th>quantity<th>subTotal
 	<tr align="right">
