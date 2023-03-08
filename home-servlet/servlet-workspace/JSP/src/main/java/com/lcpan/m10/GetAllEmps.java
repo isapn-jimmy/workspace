@@ -8,37 +8,34 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.sql.DataSource;
 
 import com.lcpan.bean.EmpBean;
 
-/**
- * Servlet implementation class GetUserName
- */
 @WebServlet("/GetAllEmps")
 public class GetAllEmps extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	String JDBC_DRIVER="com.microsoft.sqlserver.jdbc.SQLServerDriver";
+	String DB_URL="jdbc:sqlserver://localhost:1433;databasename=jdbc;encrypt=false";
+	String USER="sa";
+	String PASSWORD="123";
+	String SQL="select * from dbo.employee";
+	Connection conn;
 
-    Connection conn;   
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		try {
-			Context context=new InitialContext();
-			DataSource ds = (DataSource)context
-					.lookup("java:/comp/env/jdbc/servdb");
-			conn = ds.getConnection();
-			PreparedStatement stmt = conn.prepareStatement("select * from dbo.employee ");//怕會毀掉，所以要記得把連線給關掉。用final or getWithResource
+			Class.forName(JDBC_DRIVER);
+			conn=DriverManager.getConnection(DB_URL,USER,PASSWORD);
+			PreparedStatement stmt = conn.prepareStatement(SQL);
 			ResultSet rs = stmt.executeQuery();
-			List<EmpBean> emps = new ArrayList<>();
-			EmpBean emp = null;
-			while (rs.next()) {
+			List<EmpBean> emps=new ArrayList<>();
+			EmpBean emp=null;
+			while(rs.next()) {
 				emp=new EmpBean();
 				emp.setEmpno(rs.getString("empno"));
 				emp.setEname(rs.getString("ename"));
@@ -47,26 +44,17 @@ public class GetAllEmps extends HttpServlet {
 				emp.setDeptno(rs.getString("deptno"));
 				emp.setTitle(rs.getString("title"));
 				emps.add(emp);
-
-
 			}
 			request.setAttribute("emps", emps);
 			stmt.close();
-			request.getRequestDispatcher("/m10/GetAllEmps.jsp")
-			.forward(request, response);
-			
+			request.getRequestDispatcher("/m10/GetAllEmps.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
-			}
-		
-		
+		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 

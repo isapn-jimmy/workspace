@@ -8,11 +8,10 @@
 </head>
 <body style="background-color:#fdf5e6">
 <div align="center">
-<h2>員工資料</h2>
+<h2>新員工資料</h2>
 <jsp:useBean id="emp" scope="request" class="com.lcpan.bean.EmpBean"/>
 <table>
-<tr><td>員工編號
-<td><input type="text" disabled value="<%=emp.getEmpno()%>">
+<tr><td>員工編號<td><input type="text" disabled value="<%=emp.getEmpno()%>">
 <tr><td>姓名<td><input type="text" disabled value="<%=emp.getEname()%>">
 <tr><td>到職日<td><input type="text" disabled value="<%=emp.getHiredate()%>">
 <tr><td>薪水<td><input type="text" disabled value="<%=emp.getSalary()%>">
