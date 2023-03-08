@@ -36,6 +36,12 @@
     <!-- Editable user database that can also be used by
          UserDatabaseRealm to authenticate users
     -->
+    <Resource driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
+    url="jdbc:sqlserver://localhost:1433;databasename=jdbc;encrypt=false" 
+    name="jdbc/servdb" username="sa" password="123"
+    type="javax.sql.DataSource" auth="Container"
+    initialSize="5" maxTotal="8" maxIdle="5" maxWaitMills="-1"
+    poolPreparedStatement="true" validationQuery="select 1"/>
     <Resource auth="Container" description="User database that can be updated and saved" factory="org.apache.catalina.users.MemoryUserDatabaseFactory" name="UserDatabase" pathname="conf/tomcat-users.xml" type="org.apache.catalina.UserDatabase"/>
   </GlobalNamingResources>
 
@@ -152,7 +158,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="Servlet" path="/Servlet" reloadable="true" source="org.eclipse.jst.jee.server:Servlet"/></Host>
+      <Context docBase="Servlet" path="/Servlet" reloadable="true" source="org.eclipse.jst.jee.server:Servlet"/><Context docBase="JSP" path="/JSP" reloadable="true" source="org.eclipse.jst.jee.server:JSP"/></Host>
     </Engine>
   </Service>
 </Server>
