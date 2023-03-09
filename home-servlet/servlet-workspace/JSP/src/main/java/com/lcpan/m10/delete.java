@@ -15,8 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.lcpan.bean.EmpBean;
 
-@WebServlet("/insert")
-public class insert extends HttpServlet {
+@WebServlet("/delete")
+public class delete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	String JDBC_DRIVER="com.microsoft.sqlserver.jdbc.SQLServerDriver";
 	String DB_URL="jdbc:sqlserver://localhost:1433;databasename=jdbc;encrypt=false";
@@ -35,38 +35,23 @@ public class insert extends HttpServlet {
 		String title = request.getParameter("title");
 
 		
-		String sql = "insert into [employee] (empno,ename,hiredate,salary,deptno,title) values(?,?,?,?,?,?) ";
+		String sql = "DELETE  FROM [dbo].[employee] where empno=?";
 		
 		try {
 			Class.forName(JDBC_DRIVER);
 			conn=DriverManager.getConnection(DB_URL,USER,PASSWARD);
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			   stmt.setString(1, empno);
-		        stmt.setString(2, ename);
-		        stmt.setString(3, hiredate);
-		        stmt.setString(4, salary);
-		        stmt.setString(5, deptno);
-		        stmt.setString(6, title);
 
 		        int updateCount = stmt.executeUpdate();
-		        if(updateCount>0) {
-		        	EmpBean emp= new EmpBean();
-		        	emp.setEmpno(empno);
-		        	emp.setEname(ename);
-		        	emp.setHiredate(hiredate);
-		        	emp.setSalary(salary);
-		        	emp.setDeptno(deptno);
-		        	emp.setTitle(title);
-					request.setAttribute("emp", emp);
-					request.getRequestDispatcher("/m10/insert.jsp").forward(request, response);
+		        if(updateCount>0) {	  
+					request.setAttribute("result", "刪除成功");
+					
+		        }else {
+		        	request.setAttribute("result", "error");
 		        }
-				
 		        stmt.close();
-		        conn.close();
-
-		        response.setContentType("text/html; charset=UTF-8");
-		        response.getWriter().write("新增成功！");
-		
+		        request.getRequestDispatcher("/m10/delete.jsp").forward(request, response);	
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -74,6 +59,15 @@ public class insert extends HttpServlet {
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			if(conn!=null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					// TODO: handle exception
+					e.printStackTrace();
+				}
+			}
 		}
 
 		

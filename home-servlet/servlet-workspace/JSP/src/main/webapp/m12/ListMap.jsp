@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" 
     pageEncoding="UTF-8" import="java.util.*" %>
 <% 
+	String name= "jimmy";
+	request.setAttribute("name", name);
+	
+	
 	List<String> greetings = new ArrayList<>();
 	greetings.add("Hello World");
 	greetings.add("Have a nice day");
@@ -13,6 +17,7 @@
 %>
 <html>
 <body>
+${name}<br> <!-- 字串 -->
 ${greetings[0]}<br>
 ${greetings[1]}<br>
 ${greetings[2]}<p>
